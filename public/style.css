@@ -1,22 +1,124 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: black;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: black;
+  font-family: Arial, sans-serif;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* Contenedor general */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Redes sociales */
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  margin: 0 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.social-icons img:hover {
+  opacity: 1;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* Visor de imágenes */
+#viewer {
+  height: auto;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor con botones */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+#menu-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Botones de navegación */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+#prev-button {
+  left: 10px;
+}
+
+#next-button {
+  right: 10px;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tab {
+    font-size: 14px;
+    padding: 8px 14px;
   }
-  
-  #viewer {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .social-icons img {
+    width: 24px;
   }
-  
-  #menu-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;  
+
+  .nav-button {
+    font-size: 2.5rem;
   }
-  
+}

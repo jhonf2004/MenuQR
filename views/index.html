@@ -7,9 +7,31 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="viewer">
-    <img id="menu-image" src="/images/carta1.jpg" alt="Menú" />
+
+  <div class="container">
+
+    <!-- Iconos de redes sociales -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com/johnf.huertas.3/"><img src="/icons/facebook.svg" alt="Facebook"></a>
+      <a href="https://www.instagram.com/jf_deku/"><img src="/icons/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="/icons/tiktok.svg" alt="TikTok"></a>
+    </div>
+
+    <!-- Tabs para seleccionar carta -->
+    <div class="tabs">
+      <div id="tab-bebidas" class="tab active">Carta de Bebidas</div>
+      <div id="tab-menu" class="tab">Carta de Menú</div>
+    </div>
+
+    <!-- Visor de imágenes -->
+    <div class="image-container">
+      <img id="menu-image" src="/images/bebidas1.jpg" alt="Carta">
+      <div id="prev-button" class="nav-button">&#10094;</div>
+      <div id="next-button" class="nav-button">&#10095;</div>
+    </div>
+
   </div>
+
   <script src="/script.js"></script>
 </body>
 </html>
