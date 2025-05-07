@@ -9,9 +9,7 @@ const bebidasImages = [
 ];
 
 const menuImages = [
-  '/images/menu1.jpg',
-  '/images/menu2.jpg',
-  '/images/menu3.jpg'
+  '/images/menu1.jpg'
 ];
 
 
@@ -91,4 +89,4 @@ function setActiveTab(tabId) {
   document.getElementById(tabId).classList.add('active');
 }
 
-showImage(currentIndex);
+document.getElementById('tab-menu').click();
