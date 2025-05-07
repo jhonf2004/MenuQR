@@ -14,8 +14,8 @@ const menuImages = [
   '/images/menu3.jpg'
 ];
 
-// Estado actual
-let currentImages = bebidasImages;
+
+let currentImages = menuImages;
 let currentIndex = 0;
 
 const imageElement = document.getElementById('menu-image');
@@ -33,7 +33,7 @@ function showPreviousImage() {
   showImage(currentIndex - 1);
 }
 
-// Detectar clic izquierdo o derecho en la imagen
+
 imageElement.addEventListener('click', (e) => {
   const clickX = e.offsetX;
   const width = imageElement.clientWidth;
@@ -45,7 +45,7 @@ imageElement.addEventListener('click', (e) => {
   }
 });
 
-// Soporte para deslizar (swipe)
+// (swipe)
 let startX = 0;
 
 imageElement.addEventListener('touchstart', (e) => {
@@ -61,7 +61,7 @@ imageElement.addEventListener('touchend', (e) => {
   }
 });
 
-// Botones de navegación
+
 document.getElementById('prev-button').addEventListener('click', (e) => {
   e.stopPropagation();
   showPreviousImage();
@@ -72,7 +72,6 @@ document.getElementById('next-button').addEventListener('click', (e) => {
   showNextImage();
 });
 
-// Tabs de navegación
 document.getElementById('tab-bebidas').addEventListener('click', () => {
   currentImages = bebidasImages;
   currentIndex = 0;
@@ -87,11 +86,9 @@ document.getElementById('tab-menu').addEventListener('click', () => {
   setActiveTab('tab-menu');
 });
 
-// Estilo activo
 function setActiveTab(tabId) {
   document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
 }
 
-// Mostrar imagen inicial
 showImage(currentIndex);
