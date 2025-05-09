@@ -9,9 +9,9 @@ const bebidasImages = [
 ];
 
 const menuImages = [
-  '/images/menu1.jpg'
+  '/images/menu1.jpg',
+  '/images/menu2.jpg'
 ];
-
 
 let currentImages = menuImages;
 let currentIndex = 0;
@@ -31,40 +31,28 @@ function showPreviousImage() {
   showImage(currentIndex - 1);
 }
 
-
+// Navegación táctil y clic
 imageElement.addEventListener('click', (e) => {
   const clickX = e.offsetX;
   const width = imageElement.clientWidth;
-
-  if (clickX < width / 2) {
-    showPreviousImage();
-  } else {
-    showNextImage();
-  }
+  if (clickX < width / 2) showPreviousImage();
+  else showNextImage();
 });
 
-// (swipe)
 let startX = 0;
-
 imageElement.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
 });
-
 imageElement.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
-  if (startX > endX + 30) {
-    showNextImage();
-  } else if (startX < endX - 30) {
-    showPreviousImage();
-  }
+  if (startX > endX + 30) showNextImage();
+  else if (startX < endX - 30) showPreviousImage();
 });
-
 
 document.getElementById('prev-button').addEventListener('click', (e) => {
   e.stopPropagation();
   showPreviousImage();
 });
-
 document.getElementById('next-button').addEventListener('click', (e) => {
   e.stopPropagation();
   showNextImage();
@@ -90,3 +78,17 @@ function setActiveTab(tabId) {
 }
 
 document.getElementById('tab-menu').click();
+
+// Mostrar loader por 3 segundos y luego notificación
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  setTimeout(() => {
+    loader.style.display = 'none';
+
+    // Mostrar aviso de navegación
+    const notice = document.createElement('div');
+    notice.id = 'notice';
+    notice.textContent = 'Toca o desliza la imagen para navegar';
+    document.body.appendChild(notice);
+  }, 3000); // 3 segundos
+});
