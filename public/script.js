@@ -22,6 +22,9 @@ function showImage(index) {
   currentIndex = (index + currentImages.length) % currentImages.length;
   imageElement.src = currentImages[currentIndex];
 }
+imageElement.addEventListener('contextmenu', (e) => {
+  e.preventDefault(); // Evita la opción de descargar imagen
+});
 
 function showNextImage() {
   showImage(currentIndex + 1);
