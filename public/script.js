@@ -85,10 +85,9 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     loader.style.display = 'none';
 
-    // Mostrar aviso de navegación
-    const notice = document.createElement('div');
-    notice.id = 'notice';
-    notice.textContent = 'Toca o desliza la imagen para navegar';
-    document.body.appendChild(notice);
+    const notice = document.getElementById('notice');
+    if (notice) {
+      notice.textContent = 'Toca o desliza la imagen para navegar';
+    }
   }, 3000); // 3 segundos
 });
