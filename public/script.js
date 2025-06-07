@@ -36,12 +36,12 @@ function showPreviousImage() {
 }
 
 // Navegación táctil y clic
-imageElement.addEventListener('click', (e) => {
+/*imageElement.addEventListener('click', (e) => {
   const clickX = e.offsetX;
   const width = imageElement.clientWidth;
   if (clickX < width / 2) showPreviousImage();
   else showNextImage();
-});
+});*/
 
 let startX = 0;
 imageElement.addEventListener('touchstart', (e) => {
